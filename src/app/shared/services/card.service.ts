@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { Card } from "../models/card.model";
+import { Injectable } from '@angular/core';
+import { Card } from '../models/card.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,25 +14,25 @@ export class CardService {
     new Card('jkf675', 'sdsf32', '2131038472830293', 'Credit', 'Bunch of Money'),
     new Card('gg3gj5', 'd5g3d5', '2735940018302643', 'Debit', 'Avengers First Account'),
     new Card('zgw564', 'd5g3d5', '4836509818695049', 'Credit', 'Gold Rewards')
-  ]
+  ];
 
   // api call should be GET/api/users/{userId}/cards
   getCards(userId: string, params: {} = {}): Card[] {
-    let paramKeys = Object.keys(params);
+    const paramKeys = Object.keys(params);
     return this.cards.filter(card => {
       let returnCard = false;
       paramKeys.forEach(param => {
         if (card[param] === params[param] && card.userId === userId) {
-          returnCard = true
+          returnCard = true;
         }
-      })
+      });
       return returnCard ? true : false;
     });
   }
 
   // api call should be GET/api/users/{userId}/cards/{cardId}
   getCard(userId: string, cardId: string): Card {
-    console.log(cardId)
+    console.log(cardId);
     return this.cards.find(card => card.id === cardId && card.userId === userId);
   }
 }

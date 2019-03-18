@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { Transaction } from "../models/transaction.model";
+import { Injectable } from '@angular/core';
+import { Transaction } from '../models/transaction.model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +33,7 @@ export class TransactionService {
     new Transaction('yert45', 'zgw564', 'd5g3d5', new Date(), 'Starbucks', 'Food', 213),
     new Transaction('436he5', 'gg3gj5', 'd5g3d5', new Date(), 'Bus', 'Transportation', 225),
     new Transaction('y6e5ws', 'zgw564', 'd5g3d5', new Date(), 'Starbucks', 'Food', 213)
-  ]
+  ];
 
   // api call should be GET/api/users/{userId}/transactions
   getTransactions(userId: string): Transaction[] {

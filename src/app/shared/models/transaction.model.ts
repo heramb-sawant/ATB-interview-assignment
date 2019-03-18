@@ -18,7 +18,7 @@ export class Transaction {
   ) {
     this.id = id;
     this.cardId = cardId;
-    this.userId = userId
+    this.userId = userId;
     this.date = date;
     this.payee = payee;
     this.category = category;

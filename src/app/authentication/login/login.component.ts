@@ -16,14 +16,14 @@ export class LoginComponent {
   passwordForm = new FormControl('', [
     Validators.required
   ]);
-  displayCredentialsError: boolean = false;
+  displayCredentialsError = false;
 
   constructor(private router: Router, private authenticationService: AuthenticationService) { }
 
   login() {
-    console.log('loggingin')
+    console.log('loggingin');
     if (!this.usernameForm.hasError('required') && !this.passwordForm.hasError('required')) {
-      let isUserAuthenticated = this.authenticationService.login(this.usernameForm.value, this.passwordForm.value);
+      const isUserAuthenticated = this.authenticationService.login(this.usernameForm.value, this.passwordForm.value);
       if (!isUserAuthenticated) {
         this.displayCredentialsError = true;
       } else {

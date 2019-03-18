@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Card } from "../../../shared/models/card.model";
+import { Card } from '../../../shared/models/card.model';
 import { CardService } from '../../../shared/services/card.service';
 
 @Component({
@@ -11,12 +11,12 @@ import { CardService } from '../../../shared/services/card.service';
 export class SummaryListComponent implements OnInit {
 
   debitCards: Card[] = [];
-  creditCards: Card[] = []
+  creditCards: Card[] = [];
 
   constructor(private cardService: CardService) { }
 
   ngOnInit() {
-    let userId = localStorage.getItem('authenticatedUserId');
+    const userId = localStorage.getItem('authenticatedUserId');
     // object represents search params
     this.debitCards = this.cardService.getCards(userId, { transactionType: 'Debit' });
     this.creditCards = this.cardService.getCards(userId, { transactionType: 'Credit' });

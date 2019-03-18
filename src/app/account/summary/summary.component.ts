@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from "../../shared/models/user.model";
+import { User } from '../../shared/models/user.model';
 import { UserService } from '../../shared/services/user.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class SummaryComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    let userId: string = localStorage.getItem('authenticatedUserId');
-    this.user = this.userService.getUser(userId)
+    const userId: string = localStorage.getItem('authenticatedUserId');
+    this.user = this.userService.getUser(userId);
   }
 }

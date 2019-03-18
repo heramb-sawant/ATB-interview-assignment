@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Card } from "../../../../shared/models/card.model";
+import { Card } from '../../../../shared/models/card.model';
 
 @Component({
   selector: 'app-summary-list-item',
@@ -8,7 +8,7 @@ import { Card } from "../../../../shared/models/card.model";
   styleUrls: ['./summary-list-item.component.css']
 })
 export class SummaryListItemComponent implements OnInit {
-  @Input('card') card: Card;
+  @Input() card: Card;
   constructor() { }
 
   ngOnInit() {
