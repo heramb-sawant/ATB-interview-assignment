@@ -28,7 +28,6 @@ export class AuthenticationService {
   }
 
   logout() {
-    console.log('clearing storeage');
     localStorage.clear();
   }
 }

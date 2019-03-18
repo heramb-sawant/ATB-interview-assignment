@@ -21,7 +21,6 @@ export class LoginComponent {
   constructor(private router: Router, private authenticationService: AuthenticationService) { }
 
   login() {
-    console.log('loggingin');
     if (!this.usernameForm.hasError('required') && !this.passwordForm.hasError('required')) {
       const isUserAuthenticated = this.authenticationService.login(this.usernameForm.value, this.passwordForm.value);
       if (!isUserAuthenticated) {

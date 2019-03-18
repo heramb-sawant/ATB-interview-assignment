@@ -11,8 +11,5 @@ export class SummaryListItemComponent implements OnInit {
   @Input() card: Card;
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.card);
-  }
-
+  ngOnInit() { }
 }

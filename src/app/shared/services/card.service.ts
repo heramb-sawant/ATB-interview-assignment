@@ -32,7 +32,6 @@ export class CardService {
 
   // api call should be GET/api/users/{userId}/cards/{cardId}
   getCard(userId: string, cardId: string): Card {
-    console.log(cardId);
     return this.cards.find(card => card.id === cardId && card.userId === userId);
   }
 }
