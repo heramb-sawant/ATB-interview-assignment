@@ -6,6 +6,7 @@ import {
   MatFormFieldModule,
   MatInputModule
 } from '@angular/material';
+import { MatTabsModule } from '@angular/material/tabs';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -41,12 +42,14 @@ import { LoginComponent } from './authentication/login/login.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTabsModule,
     ReactiveFormsModule
   ],
   exports: [
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
