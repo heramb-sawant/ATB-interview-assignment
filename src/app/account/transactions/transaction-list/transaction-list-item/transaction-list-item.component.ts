@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Transaction } from '../../../../shared/models/transaction.model';
 
 @Component({
   selector: 'app-transaction-list-item',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transaction-list-item.component.css']
 })
 export class TransactionListItemComponent implements OnInit {
+
+  @Input() transaction: Transaction;
 
   constructor() { }
 

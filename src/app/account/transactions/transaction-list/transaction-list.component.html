@@ -1,3 +1,5 @@
-<p>
-  transaction-list works!
-</p>
+<h2>Transaction History</h2>
+<app-transaction-list-item
+  *ngFor="let transaction of transactions"
+  [transaction]="transaction">
+</app-transaction-list-item>
