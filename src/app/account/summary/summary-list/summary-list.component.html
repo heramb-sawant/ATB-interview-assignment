@@ -1,3 +1,4 @@
-<p>
-  summary-list works!
-</p>
+<h2>Banking</h2>
+<app-summary-list-item *ngFor="let card of debitCards" [card]="card"></app-summary-list-item>
+<h2>Credit Cards</h2>
+<app-summary-list-item *ngFor="let card of creditCards" [card]="card"></app-summary-list-item>

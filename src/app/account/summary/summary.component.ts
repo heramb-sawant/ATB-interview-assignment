@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { User } from "../../shared/models/user.model";
+import { UserService } from '../../shared/services/user.service';
+
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    let userId: string = localStorage.getItem('authenticatedUserId');
+    this.user = this.userService.getUser(userId)
   }
-
 }

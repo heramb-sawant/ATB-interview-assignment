@@ -19,7 +19,7 @@ export class AccountComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let userId: string = localStorage.getItem('authenticatedUserId');
+    const userId: string = localStorage.getItem('authenticatedUserId');
     this.user = this.userService.getUser(userId)
   }
 }
