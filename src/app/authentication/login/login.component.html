@@ -1,3 +1,18 @@
-<p>
-  login works!
-</p>
+<h2>Log in component</h2>
+<form class="form-container">
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="Enter your username" [formControl]="usernameForm">
+    <mat-error *ngIf="usernameForm.hasError('required')">
+      A username is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput placeholder="Enter your password" [formControl]="passwordForm">
+    <mat-error *ngIf="passwordForm.hasError('required')">
+       A password is required
+     </mat-error>
+   </mat-form-field>
+  <button mat-raised-button>Login</button>
+ </form>
