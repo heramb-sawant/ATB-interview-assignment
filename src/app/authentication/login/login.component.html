@@ -11,8 +11,11 @@
     <mat-label>Password</mat-label>
     <input type="password" matInput placeholder="Enter your password" [formControl]="passwordForm">
     <mat-error *ngIf="passwordForm.hasError('required')">
-       A password is required
-     </mat-error>
-   </mat-form-field>
-  <button mat-raised-button>Login</button>
+      A password is required
+    </mat-error>
+  </mat-form-field>
+  <mat-error *ngIf="displayCredentialsError">
+    We cannot find an account with that username and password
+  </mat-error>
+  <button mat-raised-button (click)="login()">Login</button>
  </form>
