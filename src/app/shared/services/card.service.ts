@@ -17,12 +17,21 @@ export class CardService {
   ]
 
   // api call should be GET/api/users/{userId}/cards
-  getCards(userId: string): Card[] {
-    return this.cards.filter(card => card.userId === userId);
+  getCards(userId: string, params: {} = {}): Card[] {
+    let paramKeys = Object.keys(params);
+    return this.cards.filter(card => {
+      let returnCard = false;
+      paramKeys.forEach(param => {
+        if (card[param] === params[param] && card.userId === userId) {
+          returnCard = true
+        }
+      })
+      return returnCard ? true : false;
+    });
   }
 
   // api call should be GET/api/users/{userId}/cards/{cardId}
-  getCard(userId: string, cardId: string): Card  {
+  getCard(userId: string, cardId: string): Card {
     console.log(cardId)
     return this.cards.find(card => card.id === cardId && card.userId === userId);
   }
