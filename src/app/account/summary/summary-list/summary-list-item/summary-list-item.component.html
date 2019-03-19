@@ -1,4 +1,6 @@
-<div class="card-container">
-  <h4>{{card.accountType}}</h4>
-  <p>{{card.accountNumber}} - {{cardInfo}}</p>
+<div class="list-item-container">
+  <h3>{{ card.accountType }}</h3>
+  <p class="align-left">{{ card.accountNumber }}</p>
+  <p class="align-right">{{ (card.balance / 100).toFixed(2) | currency }}</p>
 </div>
+<mat-divider></mat-divider>

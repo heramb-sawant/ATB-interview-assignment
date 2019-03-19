@@ -1,4 +1,25 @@
-<h2>Banking</h2>
-<app-summary-list-item *ngFor="let card of debitCards" [card]="card"></app-summary-list-item>
-<h2>Credit Cards</h2>
-<app-summary-list-item *ngFor="let card of creditCards" [card]="card"></app-summary-list-item>
+<div class="summary-container">
+  <h2>Banking</h2>
+  <hr>
+  <app-summary-list-item *ngFor="let card of debitCards" [card]="card"></app-summary-list-item>
+  <h2>Credit Cards</h2>
+  <hr>
+  <app-summary-list-item *ngFor="let card of creditCards" [card]="card"></app-summary-list-item>
+  <h2>Balance Summary</h2>
+  <hr>
+  <div class="total">
+    <p><b class="align-left">Cash:</b>
+    <b class="align-right">{{ (user.balance / 100).toFixed(2) | currency }}</b></p>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="total">
+    <p><b class="align-left">Debt:</b>
+    <b class="align-right"> - {{ (user.debt / 100).toFixed(2) | currency }}</b></p>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="total">
+    <p><b class="align-left">Total:</b>
+    <b class="align-right"> {{ ((user.balance - user.debt) / 100).toFixed(2) | currency }}</b></p>
+  </div>
+  <mat-divider></mat-divider>
+</div>

@@ -1,0 +1,30 @@
+.summary-container {
+  max-width: 70%;
+}
+
+h2 {
+ padding-top: 30px;
+ padding-left: 30px;
+}
+
+hr {
+  border: 4px solid #43629B;
+  border-radius: 5px;
+}
+
+.total {
+  padding: 5px 0px 5px 30px;
+  display: inline-block;
+  width: 100%
+}
+
+.align-left {
+  float: left;
+  display: inline-block;
+}
+
+.align-right {
+  display: inline-block;
+  float: right;
+  padding-right: 60px;
+}
