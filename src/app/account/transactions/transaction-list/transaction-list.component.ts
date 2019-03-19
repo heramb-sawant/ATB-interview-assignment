@@ -23,7 +23,6 @@ export class TransactionListComponent implements OnInit {
 
   ngOnInit() {
     this.transactions = this.transactionService.getTransactions(this.userId);
-    console.log(this.transactions)
     this.dataSource = new MatTableDataSource(this.transactions);
     this.dataSource.sort = this.sort;
   }
