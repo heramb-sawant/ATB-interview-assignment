@@ -3,6 +3,7 @@ import { MatSort, MatTableDataSource } from '@angular/material';
 
 import { Transaction } from '../../../shared/models/transaction.model';
 import { TransactionService } from '../../../shared/services/transaction.service';
+import { CardService } from '../../../shared/services/card.service';
 
 @Component({
   selector: 'app-transaction-list',
@@ -14,16 +15,21 @@ export class TransactionListComponent implements OnInit {
   transactions: Transaction[] = [];
   displayedColumns: string[] = ['date', 'payee', 'category', 'account', 'amount'];
   dataSource;
+  userId: string = localStorage.getItem('authenticatedUserId');
 
-  constructor(private transactionService: TransactionService) { }
+  constructor(private transactionService: TransactionService, private cardService: CardService) { }
 
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
-    const userId = localStorage.getItem('authenticatedUserId');
-    this.transactions = this.transactionService.getTransactions(userId);
+    this.transactions = this.transactionService.getTransactions(this.userId);
+    console.log(this.transactions)
     this.dataSource = new MatTableDataSource(this.transactions);
     this.dataSource.sort = this.sort;
+  }
+
+  getAccountName(cardId: string): string {
+    return this.cardService.getCard(this.userId, cardId).accountType;
   }
 
 }
