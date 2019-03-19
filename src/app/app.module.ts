@@ -3,9 +3,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
+  MatDividerModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatSortModule
 } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { NgModule } from '@angular/core';
 
@@ -17,9 +20,6 @@ import { SummaryListComponent } from './account/summary/summary-list/summary-lis
 import { SummaryListItemComponent } from './account/summary/summary-list/summary-list-item/summary-list-item.component';
 import { TransactionsComponent } from './account/transactions/transactions.component';
 import { TransactionListComponent } from './account/transactions/transaction-list/transaction-list.component';
-import {
-  TransactionListItemComponent
-} from './account/transactions/transaction-list/transaction-list-item/transaction-list-item.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { LoginComponent } from './authentication/login/login.component';
 
@@ -32,7 +32,6 @@ import { LoginComponent } from './authentication/login/login.component';
     SummaryListItemComponent,
     TransactionsComponent,
     TransactionListComponent,
-    TransactionListItemComponent,
     AuthenticationComponent,
     LoginComponent
   ],
@@ -42,16 +41,22 @@ import { LoginComponent } from './authentication/login/login.component';
     BrowserModule,
     FormsModule,
     MatButtonModule,
+    MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     MatTabsModule,
+    MatSortModule,
     ReactiveFormsModule
   ],
   exports: [
     MatButtonModule,
+    MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTabsModule
+    MatTableModule,
+    MatTabsModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
